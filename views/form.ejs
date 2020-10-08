@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0"
+          />
+          <title>Form</title>
+     </head>
+     <body>
+          <%-include('./partials/header')%>
+
+          <section id="postWaste">
+               <img
+                    class="spendeImg"
+                    src="https://imgl.krone.at/scaled/1782264/va55b3f/full.jpg"
+                    alt=""
+               />
+               <article>
+                    <form action="/waste" method="POST">
+                         <input
+                              type="text"
+                              name="imageUrl"
+                              id="imageUrl"
+                              placeholder="imageUrl"
+                         />
+                         <br />
+                         <input type="submit" value="send" />
+                    </form>
+               </article>
+          </section>
+          <section>
+               <article id="TipFood">
+                    <form action="/tip" method="POST">
+                         <input
+                              type="text"
+                              name="imgWaste"
+                              id="imgWaste"
+                              placeholder="Image"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="description"
+                              id="description"
+                              placeholder="Beschreibung"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="ort"
+                              id="ort"
+                              placeholder="Ort der Abholung"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="date"
+                              id="date"
+                              placeholder="Datum"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="phone"
+                              id="phone"
+                              placeholder="Telefon"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="email"
+                              id="email"
+                              placeholder="Email"
+                         />
+                         <br />
+
+                         <input
+                              type="text"
+                              name="name"
+                              id="name"
+                              placeholder="Name"
+                         />
+                         <br />
+
+                         <input type="submit" value="Spende" />
+                    </form>
+               </article>
+          </section>
+          <%-include('./partials/footer')%>
+     </body>
+</html>

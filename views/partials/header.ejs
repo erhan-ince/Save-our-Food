@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="/"><img src="WasteBookLogo.svg" alt=""></a>
+        <nav class="nav">
+            <a href="/" class="nav-item" active-color="orange">Food Waste</a>
+            <a href="/tip" class="nav-item is-active" active-color="green">Food Donations</a>
+            <a href="/tipps"  class="nav-item" active-color="tomato">Tipps</a>
+            <a href="/form" class="nav-item" active-color="gold">Upload`s</a>
+            <!-- <a href="#" class="nav-item" active-color="wheat">About Us</a> -->
+            <span class="nav-indicator"></span>
+        </nav>
+        <article>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                                        <a href="/">
+                        <li>Food Waste</li>
+                    </a>
+
+                    <a href="/tip">
+                        <li>Food Donations</li>
+                    </a>
+                    <a href="/tipps">
+                        <li>Tipps</li>
+                    </a>
+                    <a href="/form">
+                        <li>Upload`s</li>
+                    </a>
+                    <!-- <a href="">
+                        <li>About Us</li>
+                    </a> -->
+                </ul>
+            </div>
+    </header>
+    </article>
+    <script>('use strict');
+
+        var indicator = document.querySelector('.nav-indicator');
+        var items = document.querySelectorAll('.nav-item');
+        
+        function handleIndicator(el) {
+             items.forEach(function (item) {
+                  item.classList.remove('is-active');
+                  item.removeAttribute('style');
+             });
+             indicator.style.width = ''.concat(el.offsetWidth, 'px');
+             indicator.style.left = ''.concat(el.offsetLeft, 'px');
+             indicator.style.backgroundColor = el.getAttribute('active-color');
+             el.classList.add('is-active');
+             el.style.color = el.getAttribute('active-color');
+        }
+        
+        items.forEach(function (item, index) {
+             item.addEventListener('click', function (e) {
+                  handleIndicator(e.target);
+             });
+             item.classList.contains('is-active') && handleIndicator(item);
+        });
+        
+    </script>
+</body>
+
+</html>
