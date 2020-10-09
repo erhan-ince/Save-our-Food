@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <title>Wastebook</title>
 </head>
-
 <body>
-    
-    <%-include('./partials/header')%>
-<img class="mainImgs" src="Im-hungry.jpg" alt="">
-    <section id="landingPage">
+    <%-include('./partials/header',{isActive:1})%>
+    <img class="mainImgs" src="Im-hungry.jpg" alt="">
+    <section class="descriptions">
+        <h2>Jedes Jahr wandern 18 Millionen Tonnen Lebensmittel <br> in Deutschland in den Müll</h2>
+        <p>Auch wenn niemand von uns auf die Idee käme, ein Drittel seines Wocheneinkaufs direkt in den Müll zu verfrachten – statistisch betrachtet landet genau diese Menge irgendwann ungenutzt in der Tonne. Laut Schätzungen der Weltgesundheitsorganisation (WHO) sind das weltweit rund 1,3 Milliarden Tonnen Lebensmittel pro Jahr.
+
+            Gleichzeitig hungern 821,6 Millionen Menschen – ein Skandal, denn die Lebensmittelverschwendung in Industrieländern hat durchaus auch etwas mit der Not vieler Menschen in Entwicklungsländern zu tun. Dabei ist es gar nicht so schwer, einen ersten Schritt in eine andere Richtung zu gehen und weniger Lebensmittel wegzuwerfen.
+            
+            </p>
+    </section>
+    <section class="landingPage">
         <h1>Todays Waste</h1>
-    <div class="Images">
-        
-        <% images.forEach(element => { %>
-        <div class="Image">
-           <img id="wasteImg" src="<%= element.url %>" alt="">
-        </div>
-    <% }) %>
-</section>
-<%-include('./partials/footer')%>
-
+        <div class="Images">
+            <% images.forEach(element => { %>
+            <div class="Image">
+                <% if(element.url !=null){ %>
+                <img id="wasteImg" src="<%= element.url %>" alt="">
+                <section> <% }
+             if (element.urlWaste !=null){ %>
+                    <% } %>
+                </section>
+            </div>
+            <% }) %>
+    </section>
+    <%-include('./partials/footer')%>
 </body>
-
 </html>

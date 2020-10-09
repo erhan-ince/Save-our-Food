@@ -8,16 +8,20 @@
           />
           <title>Form</title>
      </head>
+
      <body>
-          <%-include('./partials/header')%>
+          <%-include('./partials/header',{isActive:4})%>
 
           <section id="postWaste">
-               <img
-                    class="spendeImg"
-                    src="https://imgl.krone.at/scaled/1782264/va55b3f/full.jpg"
-                    alt=""
-               />
                <article>
+                    <img
+                         class="spendeImg"
+                         src="https://imgl.krone.at/scaled/1782264/va55b3f/full.jpg"
+                         alt=""
+                    />
+               </article>
+               <article class="container">
+                    <h3>Foto Upload</h3>
                     <form action="/waste" method="POST">
                          <input
                               type="text"
@@ -30,8 +34,12 @@
                     </form>
                </article>
           </section>
-          <section>
-               <article id="TipFood">
+          <section id="SpendeForm">
+               <article id="TipFood" class="container">
+                    <h3>
+                         Jedes Jahr wandern 18 Million Tonnen <br />
+                         Lebensmittel in Deutschland in den Müll
+                    </h3>
                     <form action="/tip" method="POST">
                          <input
                               type="text"
